@@ -31,7 +31,7 @@
                 {
                     "title": "Shirts",
                     "description": "Explore Now!",
-                    "image": "./images/category-women-hoodies.jpg"
+                    "image": "./images/category-men-shirts.jpg"
                 },
                 {
                     "title":"jeans",
@@ -110,7 +110,7 @@
             },
             {
                 "title":"Location",
-                "description":""
+                "description":"Location Country"
             }
         ],
         "copyright":"Copyright 2024 ShopEase"

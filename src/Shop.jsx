@@ -13,7 +13,7 @@ export const Shop = () => {
       <HeroSection />
       <NewArrivals />
       {content?.categories && content?.categories?.map((item, index) => <Category key={item?.title + index} {...item} />)}
-      <Footer/>
+      <Footer content={content.footer} />
     </>
   )
 }
@@ -21,8 +21,12 @@ export const Shop = () => {
 export default Shop
 
 
-//reference https://www.youtube.com/watch?v=p8tBD3YTCPo&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=10&ab_channel=TheCodeReveal
-//util 1:18:26 / 1:30:06
+//reference 
+//github https://github.com/pardeep16/shopEase
+//youtube 
+// part1 https://www.youtube.com/watch?v=p8tBD3YTCPo&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=10&ab_channel=TheCodeReveal
+// part2 https://www.youtube.com/watch?v=LdEO5nPOaa0&ab_channel=TheCodeReveal
+//util 8:17 / 27:36
 
 
 
