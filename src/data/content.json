@@ -1,118 +1,125 @@
 {
-    "categories":[
-        {
-            "title":"categories For Women",
-            "data": [
+    "pages": {
+        "shop": {
+            "sections": [
                 {
-                    "title": "hoodies & Sweetshirt",
-                    "description": "Explore Now!",
-                    "image": "./images/category-women-hoodies.jpg"
+                    "title": "categories For Women",
+                    "data": [
+                        {
+                            "title": "Hoodies & Sweetshirt",
+                            "description": "Explore Now!",
+                            "image": "./images/category-women-hoodies.jpg"
+                        },
+                        {
+                            "title": "Coats & Prkas",
+                            "description": "Explore Now!",
+                            "image": "./images/category-women-coats.jpg"
+                        },
+                        {
+                            "title": "Tees & T-Shirt",
+                            "description": "Explore Now!",
+                            "image": "./images/category-women-tshirts.png"
+                        },
+                        {
+                            "title": "Shorts",
+                            "description": "Explore Now!",
+                            "image": "./images/category-women-shorts.jpg"
+                        }
+                    ]
                 },
                 {
-                    "title":"Coats & Prkas",
-                    "description":"Explore Now!",
-                    "image":"./images/category-women-coats.jpg"
-                },
-                {
-                    "title":"Tees & T-Shirt",
-                    "description":"Explore Now!",
-                    "image":"./images/category-women-tshirts.png"
-                },
-                {
-                    "title":"Shorts",
-                    "description":"Explore Now!",
-                    "image":"./images/category-women-shorts.jpg"
-                }
-            ]
-        },
-        {
-            "title":"categories For Men",
-            "data": [
-                {
-                    "title": "Shirts",
-                    "description": "Explore Now!",
-                    "image": "./images/category-men-shirts.jpg"
-                },
-                {
-                    "title":"jeans",
-                    "description":"Explore Now!",
-                    "image":"./images/category-men-jeans.jpg"
-                },
-                {
-                    "title":"hoodies & Sweetshirt",
-                    "description":"Explore Now!",
-                    "image":"./images/category-men-hoodies.png"
-                },
-                {
-                    "title":"T-Shirt",
-                    "description":"Explore Now!",
-                    "image":"./images/category-men-tshirts.png"
+                    "title": "categories For Men",
+                    "data": [
+                        {
+                            "title": "Shirts",
+                            "description": "Explore Now!",
+                            "image": "./images/category-men-shirts.jpg"
+                        },
+                        {
+                            "title": "Jeans",
+                            "description": "Explore Now!",
+                            "image": "./images/category-men-jeans.jpg"
+                        },
+                        {
+                            "title": "Hoodies & Sweetshirt",
+                            "description": "Explore Now!",
+                            "image": "./images/category-men-hoodies.png"
+                        },
+                        {
+                            "title": "T-Shirt",
+                            "description": "Explore Now!",
+                            "image": "./images/category-men-tshirts.png"
+                        }
+                    ]
                 }
             ]
         }
-    ],
-    "footer":{
-        "items":[
+    },
+    "footer": {
+        "items": [
             {
-                "title":"Need Help",
-                "list":[
+                "title": "Need Help",
+                "list": [
                     {
-                        "label":"Contact us",
-                        "path":"/contact-us"
+                        "label": "Contact us",
+                        "path": "/contact-us"
                     },
                     {
-                        "label":"Track Order",
-                        "path":"/trak-order"
+                        "label": "Track Order",
+                        "path": "/trak-order"
                     },
                     {
-                        "label":"Returns & Refunds",
-                        "path":"/refunds"
+                        "label": "Returns & Refunds",
+                        "path": "/refunds"
                     },
                     {
-                        "label":"FAQ's",
-                        "path":"/faq"
+                        "label": "FAQ's",
+                        "path": "/faq"
                     },
                     {
-                        "label":"Career",
-                        "path":"/career"
+                        "label": "Career",
+                        "path": "/career"
                     }
                 ]
             },
             {
-                "title":"Company",
-                "list":[
+                "title": "Company",
+                "list": [
                     {
-                        "label":"About Us",
-                        "path":"/about"
+                        "label": "About Us",
+                        "path": "/about"
                     },
                     {
-                        "label":"Media",
-                        "path":"/media"
+                        "label": "Media",
+                        "path": "/media"
                     }
                 ]
             },
             {
-                "title":"More Info",
-                "list":[
+                "title": "More Info",
+                "list": [
                     {
-                        "label":"Term and COnditions",
-                        "path":"/terms-conditions"
+                        "label": "Term and COnditions",
+                        "path": "/terms-conditions"
                     },
                     {
-                        "label":"Privacy Policy",
-                        "path":"/policies"
+                        "label": "Privacy Policy",
+                        "path": "/policies"
                     },
                     {
-                        "label":"Shipping Policy",
-                        "path":"/policies"
+                        "label": "Shipping Policy",
+                        "path": "/policies"
                     }
                 ]
             },
             {
-                "title":"Location",
-                "description":"Location Country"
+                "title": "Location",
+                "description": "Location Country"
             }
         ],
-        "copyright":"Copyright 2024 ShopEase"
-    }
+        "copyright": "Copyright 2024 ShopEase"
+    },
+    "categories":[
+        
+    ]
 }

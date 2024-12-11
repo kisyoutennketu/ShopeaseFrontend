@@ -15,10 +15,10 @@ export const Navigation = () => {
         <div className='flex flex-wrap items-center gap-10 flex-1'>
             {/* Nav items */}
             <ul className='flex gap-14 text-gray-600 hover:text-black'>
-                <li ><NavLink to="/" className={({isActive}) => isActive ?  'active-link': ''}>Shop</NavLink></li>
-                <li ><NavLink to="/mens">Men</NavLink></li>
-                <li ><NavLink to="/womens">Women</NavLink></li>
-                <li ><NavLink to="/kids">Kids</NavLink></li>
+                <li ><NavLink to="/" className={({isActive}) => isActive ?  'active-link' : ''}>Shop</NavLink></li>
+                <li ><NavLink to="/men"className={({isActive}) => isActive ? 'active-link' : ''} >Men</NavLink></li>
+                <li ><NavLink to="/women" className={({isActive}) => isActive ? 'active-link' : ''} >Women</NavLink></li>
+                <li ><NavLink to="/kids" className={({isActive}) => isActive ? 'active-link' : ''} >Kids</NavLink></li>
             </ul>
         </div>
         <div className='flex justify-center'>
