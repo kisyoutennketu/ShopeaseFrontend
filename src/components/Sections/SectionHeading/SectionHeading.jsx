@@ -1,5 +1,4 @@
 import React from 'react'
-//import PropTypes from 'prop-types'
 
 export const SectionHeading = ({title}) => {
   return (
@@ -10,14 +9,6 @@ export const SectionHeading = ({title}) => {
         <p className='text-2xl'>{title}</p>
     </div>
   )
-}
-
-SectionHeading.defaultProps = {
-
-}
-
-SectionHeading.prototype = {
-    title:String
 }
 
 export default SectionHeading

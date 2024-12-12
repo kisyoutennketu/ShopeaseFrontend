@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import FilterIcon from '../../components/common/FilterIcon'
+import content from '../../data/content.json'
+import { Categories } from '../../components/Filters/Categories';
+import PriceFilter from '../../components/Filters/PriceFilter';
+import ColorsFilter from '../../components/Filters/ColorsFilter';
 
-export const ProductListPage = () => {
+const categories = content?.categories;
+
+export const ProductListPage = ({categoryType}) => {
+
+  const categoryContent = useMemo(() => {
+    return categories?.find((category => category.code === categoryType));
+  },[categoryType])
+  
+
   return (
     <div>
       
@@ -13,11 +25,21 @@ export const ProductListPage = () => {
                 <FilterIcon/>
               </div>
               <div>
+                {/* Product types */}
                 <p className='text-[16px] text-black mt-5'>Categories</p>
+                <Categories types={categoryContent?.types} />
+                <hr></hr>
+              </div>
+              <div>
+                {/* Price */}
+                <PriceFilter />
+                <hr></hr>
+                {/* Colors */}
+                <ColorsFilter colors={categoryContent?.meta_data?.colors} />
               </div>
         </div>
-        <div className='p-[40px]'>
-          <p>Hello</p>
+        <div className='p-[15px]'>
+          <p className='text-black text-lg' >{categoryContent?.description}</p>
           {/* Products */}
         </div>
       </div>

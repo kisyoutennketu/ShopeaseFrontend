@@ -11,7 +11,7 @@ export const Shop = () => {
       
       <HeroSection />
       <NewArrivals />
-      {content?.categories && content?.categories?.map((item, index) => <Category key={item?.title + index} {...item} />)}
+      {content?.pages?.shop?.sections && content?.pages?.shop?.sections?.map((item, index) => <Category key={item?.title + index} {...item} />)}
       <Footer content={content.footer} />
     </>
   )
@@ -25,7 +25,8 @@ export default Shop
 //youtube 
 // part1 https://www.youtube.com/watch?v=p8tBD3YTCPo&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=10&ab_channel=TheCodeReveal
 // part2 https://www.youtube.com/watch?v=LdEO5nPOaa0&ab_channel=TheCodeReveal
-//util 20:50 / 27:37
+// part3 https://www.youtube.com/watch?v=4nGZQbY8QTI&ab_channel=TheCodeReveal
+//util 30:58 / 1:02:04
 
 
 
