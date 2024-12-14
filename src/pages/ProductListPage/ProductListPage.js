@@ -50,7 +50,7 @@ export const ProductListPage = ({categoryType}) => {
         <div className='p-[15px]'>
           <p className='text-black text-lg' >{categoryContent?.description}</p>
           {/* Products */}
-          <div className='pt-4 grid grid-cols-3 gap-8 px-2'>
+          <div className='pt-4 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 px-2'>
             {productListItems?.map((item,index) => (
               <ProductCard key={index} {...item} />
             ))}
