@@ -27,7 +27,7 @@ export default Shop
 // part2 https://www.youtube.com/watch?v=LdEO5nPOaa0&ab_channel=TheCodeReveal
 // part3 https://www.youtube.com/watch?v=4nGZQbY8QTI&ab_channel=TheCodeReveal
 // part4 https://www.youtube.com/watch?v=C-JTLiisKJ4&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=7&ab_channel=TheCodeReveal
-//util 3:13 / 4:05:07
+//util 29:04 / 4:05:07
 
 
 
