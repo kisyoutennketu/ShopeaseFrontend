@@ -181,7 +181,7 @@
             "id": 2,
             "name": "Women",
             "code": "WOMEN",
-            "paht": "/women",
+            "path": "/women",
             "description": "Women's Clothing",
             "types": [
                 {

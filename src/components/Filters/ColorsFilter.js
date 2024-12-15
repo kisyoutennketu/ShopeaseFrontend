@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 
-const colorSelector = {
+export const colorSelector = {
     "Purple":"#8434E1",
     "Black":"#252525",
     "White":"FFFFFF",
@@ -31,7 +31,7 @@ export const ColorsFilter = ({colors}) => {
   return (
     <div className='flex flex-col mb-4'>
         <p className='text-[16px] text-black mt-5 mb-5'>Colors</p>
-        <div className='flex flex-wrap p-4'>
+        <div className='flex flex-wrap px-2'>
             {colors?.map(item => {
                 return (
                     <div className='flex flex-col mr-2'>
