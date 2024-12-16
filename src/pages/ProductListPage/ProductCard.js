@@ -16,7 +16,7 @@ export const ProductCard = ({id,title, description, price, discount, rating, bra
                     {description && <p className='text-[12px] px-1 text-gray-600'>{brand}</p>}
                 </div>
                 <div>
-                    <p>{price}</p>
+                    <p>${price}</p>
                 </div>
             </div>
             <button onClick={() => console.log("Click button!")} className='absolute top-0 right-0 pt-4 pr-4'><SvgFavourite /> </button>

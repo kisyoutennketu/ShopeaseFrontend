@@ -6,6 +6,11 @@ import { Rating } from '../../components/Rating/Rating';
 import SizeFilter from '../../components/Filters/SizeFilter';
 import ProductColors from './ProductColors';
 import SvgCreditCard from '../../components/common/SvgCreditCard';
+import SvgCloth from '../../components/common/SvgCloth';
+import SvgShipping from '../../components/common/SvgShipping';
+import SvgReturn from '../../components/common/SvgReturn';
+import SectionHeading from '../../components/Sections/SectionHeading/SectionHeading';
+import { ProductCard } from '../ProductListPage/ProductCard';
 
 
 const categories = content?.categories;
@@ -14,20 +19,37 @@ const extraSections = [
   {
     icon: <SvgCreditCard />,
     label: 'Secure payment'
+  },
+  {
+    icon: <SvgCloth />,
+    label: 'Size & Fit'
+  },
+  {
+    icon: <SvgShipping />,
+    label: 'Free shipping'
+  },
+  {
+    icon: <SvgReturn />,
+    label: 'Free Shipping & REturns'
   }
 ]
 
 
 export const ProductDetails = () => {
   const { product } = useLoaderData();
-  const [image, setImage] = useState(product?.images[0]?.startsWith('http') ? product?.images[0] : product?.thumbnail);
+  const [image, setImage] = useState();
   const [breadCrumbLinks, setBreadCrumbLinks] = useState([])
+
+  const similarProducts = useMemo(() => {
+    return content?.products?.filter((item) => item?.type_id === product?.type_id && item?.id !== product?.id );
+  }, [product])
 
   const productCategory = useMemo(() => {
     return categories?.find((category) => category?.id === product?.category_id)
   }, [product]);
 
   useEffect(() => {
+    setImage(product?.images[0]?.startsWith('http') ? product?.images[0] : product?.thumbnail)
     setBreadCrumbLinks([]);
     const arrayLinks = [{ title: 'Shop', path: '/' }, {
       title: productCategory?.name,
@@ -88,20 +110,40 @@ export const ProductDetails = () => {
               <path d="M1.5 1.33325H2.00526C2.85578 1.33325 3.56986 1.97367 3.6621 2.81917L4.3379 9.014C4.43014 9.8595 5.14422 10.4999 5.99474 10.4999H13.205C13.9669 10.4999 14.6317 9.98332 14.82 9.2451L15.9699 4.73584C16.2387 3.68204 15.4425 2.65733 14.355 2.65733H4.5M4.52063 13.5207H5.14563M4.52063 14.1457H5.14563M13.6873 13.5207H14.3123M13.6873 14.1457H14.3123M5.66667 13.8333C5.66667 14.2935 5.29357 14.6666 4.83333 14.6666C4.3731 14.6666 4 14.2935 4 13.8333C4 13.373 4.3731 12.9999 4.83333 12.9999C5.29357 12.9999 5.66667 13.373 5.66667 13.8333ZM14.8333 13.8333C14.8333 14.2935 14.4602 14.6666 14 14.6666C13.5398 14.6666 13.1667 14.2935 13.1667 13.8333C13.1667 13.373 13.5398 12.9999 14 12.9999C14.4602 12.9999 14.8333 13.373 14.8333 13.8333Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
             </svg>Add to cart </div></button>
           </div>
-          <div className='flex flex-wrap w-[250px]'>
+          <div className='grid gap-4 md:grid-cols-2 pt-4'>
             {/*  */}
             {
-              extraSections?.map((section) => (
-                <div className='flex justify-center items-center'>
+              extraSections?.map((section, index) => (
+                <div key={index} className='flex items-center'>
                   {section?.icon}
                   <p className='px-2'>{section?.label}</p>
                 </div>
               ))
             }
           </div>
+
+
         </div>
 
 
+      </div>
+      {/*  Product Description */}
+      <SectionHeading title={'Product Desciption'} />
+      <div className='md:w-[50%] w-full p-2'>
+      
+      <p className='px-8'>{product.description}</p>
+      </div>
+
+      <SectionHeading title={'Similar Products'} />
+      <div className='flex px-10'>
+            
+            <div className='pt-4 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8 px-2 pb-10'>
+                {similarProducts?.map((item, index) => (
+                  <ProductCard key={index} {...item} />
+                ))}
+
+                {!similarProducts.length && <p>No Products Found!</p>}
+            </div>
       </div>
     </>
   )
