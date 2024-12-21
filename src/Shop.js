@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeroSection from './components/HeroSection/HeroSection'
 import NewArrivals from './components/Sections/NewArrivals'
 import Category from './components/Sections/Categories/Category'
 import content from './data/content.json'
 import Footer from './components/Footer/Footer'
+import { fetchCategories } from './api/fetchCategories'
+import { useDispatch } from 'react-redux'
+import { loadCategories } from './store/features/category'
+import { setLoading } from './store/features/common'
 
 export const Shop = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setLoading(true));
+    fetchCategories().then(res => {
+      dispatch(loadCategories(res));
+    }).catch(err => {
+
+    }).finally(() => {
+      dispatch(setLoading(false));
+    })
+  }, [dispatch]);
+
   return (
     <>
       
@@ -27,7 +45,6 @@ export default Shop
 // part2 https://www.youtube.com/watch?v=LdEO5nPOaa0&ab_channel=TheCodeReveal
 // part3 https://www.youtube.com/watch?v=4nGZQbY8QTI&ab_channel=TheCodeReveal
 // part4 https://www.youtube.com/watch?v=C-JTLiisKJ4&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=7&ab_channel=TheCodeReveal
-//util 1:19:16 / 4:05:07
 
 
 
