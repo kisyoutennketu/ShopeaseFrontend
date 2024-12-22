@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { Breadcrumb } from '../../components/Breadcrumb/Breadcrumb';
 import content from '../../data/content.json'
-import { Rating } from '../../components/Rating/Rating';
+import  Rating  from '../../components/Rating/Rating';
 import SizeFilter from '../../components/Filters/SizeFilter';
 import ProductColors from './ProductColors';
 import SvgCreditCard from '../../components/common/SvgCreditCard';
@@ -11,9 +11,13 @@ import SvgShipping from '../../components/common/SvgShipping';
 import SvgReturn from '../../components/common/SvgReturn';
 import SectionHeading from '../../components/Sections/SectionHeading/SectionHeading';
 import { ProductCard } from '../ProductListPage/ProductCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../store/features/cart';
+import _ from 'lodash';
+import { getAllProducts } from '../../api/fetchProducts';
 
 
-const categories = content?.categories;
+//const categories = content?.categories;
 
 const extraSections = [
   {
@@ -38,32 +42,59 @@ const extraSections = [
 export const ProductDetails = () => {
   const { product } = useLoaderData();
   const [image, setImage] = useState();
-  const [breadCrumbLinks, setBreadCrumbLinks] = useState([])
+  const [breadCrumbLinks, setBreadCrumbLinks] = useState([]);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cartState?.cart);
+  const [similarProducts, setSimilarProducts] = useState();
+  const categories = useSelector((state) => state?.categoryState?.categories);
 
-  const similarProducts = useMemo(() => {
-    return content?.products?.filter((item) => item?.type_id === product?.type_id && item?.id !== product?.id );
-  }, [product])
+  
 
   const productCategory = useMemo(() => {
-    return categories?.find((category) => category?.id === product?.category_id)
-  }, [product]);
+    return categories?.find((category) => category?.id === product?.categoryId);
+  }, [product, categories]);
 
   useEffect(() => {
-    setImage(product?.images[0]?.startsWith('http') ? product?.images[0] : product?.thumbnail)
+    getAllProducts(product?.categoryId, product?.categoryTypeId).then(res => {
+      const excludeProduct = res?.filter((item) => item?.id !== product?.id)
+      setSimilarProducts(excludeProduct);
+    }).catch(() => {
+
+    })
+  }, [product?.categoryId, product?.categoryTypeId]);
+
+  useEffect(() => {
+    setImage(product?.thumbnail);
     setBreadCrumbLinks([]);
     const arrayLinks = [{ title: 'Shop', path: '/' }, {
       title: productCategory?.name,
-      path: productCategory?.path
+      path: productCategory?.name
     }];
-    const productType = productCategory?.types?.find((item) => item?.type_id === product?.type_id)
-    if (productType) {
+    const productType = productCategory?.categoryTypes?.find((item) => item?.id === product?.categoryTypeId);
+
+    if(productType){
       arrayLinks?.push({
         title: productType?.name,
-        path: productType?.name
+        path: productType.name
       })
     }
+    
     setBreadCrumbLinks(arrayLinks)
   }, [productCategory, product])
+
+  const addItemToCart = useCallback(() => {
+    //dispatch(addToCart({id:product?.id,quantity:1}));
+  },[]);
+
+  const colors = useMemo(() => {
+    const colorSet = _.uniq(_.map(product?.variants, 'color'));
+    return colorSet
+  }, [product])
+
+  const sizes = useMemo(() => {
+    const sizeSet = _.uniq(_.map(product?.variants, 'size'));
+    return sizeSet
+  }, [product]);
 
 
   return (
@@ -76,21 +107,21 @@ export const ProductDetails = () => {
               {/* Stack Images */}
               <div className='flex flex-row md:flex-col  justify-center h-full'>
                 {
-                  product?.images[0]?.startsWith('http') && product?.images?.map((item, index) => (
-                    <button onClick={() => setImage(item)} className='rounded-lg w-fit p-2 mb-2'><img src={item} className='h-[60px] w-[60px] bg-cover bg-center hover:scale-105' alt={'sample-' + index} /></button>
+                  product?.productResources?.map((item, index) => (
+                    <button onClick={() => setImage(item?.url)} className='rounded-lg w-fit p-2 mb-2'><img src={item?.url} className='h-[60px] w-[60px] bg-cover bg-center hover:scale-105' alt={'sample-' + index} /></button>
                   ))
                 }
               </div>
             </div>
             <div className='w-full md:w-[80%] flex justify-center md:pt-0 pt-10'>
-              <img src={image} className='h-full w-full max-h-[520px] border rounded-lg cursour-pointer object-cover' alt={product?.title} />
+              <img src={image} className='h-full w-full max-h-[520px] border rounded-lg cursour-pointer object-cover' alt={product?.name} />
             </div>
           </div>
         </div>
         <div className='w-[60%] px-10'>
           {/* Product Description */}
           <Breadcrumb links={breadCrumbLinks} />
-          <p className='text-3xl pt-4'>{product.title}</p>
+          <p className='text-3xl pt-4'>{product?.name}</p>
           <Rating rating={product?.rating} />
           {/* Price Tag */}
           <p className='text-xl bold py-2'>${product?.price}</p>
@@ -100,10 +131,10 @@ export const ProductDetails = () => {
               <Link className='text-sm text-gray-500 hover:text-gray-900' to={'https://en.wikipedia.org/wiki/Clothing_sizes'} target='_blank'>{'Size Guide ->'}</Link>
             </div>
           </div>
-          <div className='mt-2'><SizeFilter sizes={product?.size} hideTitle /> </div>
+          <div className='mt-2'><SizeFilter sizes={sizes} hideTitle multi={false} /> </div>
           <div>
             <p className='text-lg bold'>Colors Available</p>
-            <ProductColors colors={product?.color} />
+            <ProductColors colors={colors} />
           </div>
           <div className='flex py-4'>
             <button className='bg-black rounded-lg hover:bg-gray-700'><div className='flex h-[42px] rounded-lg w-[150px] px-2 items-center justify-center bg-black text-white hover:bg-gray-700'><svg width="17" height="16" className='' viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +162,7 @@ export const ProductDetails = () => {
       <SectionHeading title={'Product Desciption'} />
       <div className='md:w-[50%] w-full p-2'>
       
-      <p className='px-8'>{product.description}</p>
+      <p className='px-8'>{product?.description}</p>
       </div>
 
       <SectionHeading title={'Similar Products'} />
@@ -142,7 +173,7 @@ export const ProductDetails = () => {
                   <ProductCard key={index} {...item} />
                 ))}
 
-                {!similarProducts.length && <p>No Products Found!</p>}
+                {!similarProducts?.length && <p>No Products Found!</p>}
             </div>
       </div>
     </>

@@ -11,8 +11,8 @@ export const PriceFilter = () => {
     })
 
   return (
-    <div>
-        <p className='text-[16px] text-black mt-5 ' >Price</p>
+    <div className='flex flex-col mb-4'>
+        <p className='text-[16px] text-black mt-5 mb-5' >Price</p>
         <RangeSlider className={'custom-range-slider'} min={0} max={400} defaultValue={[range.min,range.max]} onInput = {(values) => setRange({
             min:values[0],
             max:values[1]

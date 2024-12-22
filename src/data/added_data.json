@@ -1,0 +1,182 @@
+{
+    "added_data": [
+        {
+            "name": "Black Sewatshirt",
+            "description": "100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide  all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.",
+            "price": 49.99,
+            "brand": "Nike",
+            "categoryId": "e2571e13-b506-4b49-9738-06955a5b62be",
+            "categoryTypeId": "9768e2e9-b727-41e2-b834-1bd2015f0b5c",
+            "rating": 4.7,
+            "slug": "black-sweatshirt-1",
+            "variants": [
+                {
+                    "color": "Black",
+                    "size": "S",
+                    "stockQuantity": 1
+                },
+                {
+                    "color": "Black",
+                    "size": "M",
+                    "stockQuantity": 1
+                },
+                {
+                    "color": "Black",
+                    "size": "L",
+                    "stockQuantity": 1
+                }
+            ],
+            "productResources": [
+                {
+                    "name": "white-hoodie1.jpg",
+                    "url": "https://codedev.b-cdn.net/products/sweatshirt-black.jpg",
+                    "type": "image",
+                    "isPrimary": true
+                },
+                {
+                    "name": "white-hoodie2.jpg",
+                    "url": "https://codedev.b-cdn.net/products/sweatshirt-black.jpg",
+                    "type": "image",
+                    "isPrimary": false
+                }
+            ],
+            "newArrival": true
+        },
+        {
+            "name": "Black T-Shirt",
+            "description": "Classic black t-shirt for men",
+            "price": 24.99,
+            "brand": "Nike",
+            "categoryId": "12345fd7-3b56-4961-bf9f-86b8a1ff7767",
+            "categoryTypeId": "0ca6f108-adc3-4b6e-831d-06dedf3904f5",
+            "rating": 4.5,
+            "slug": "black-T-Shirt-1",
+            "variants": [
+                {
+                    "color": "Black",
+                    "size": "M",
+                    "stockQuantity": 1
+                },
+                {
+                    "color": "Black",
+                    "size": "L",
+                    "stockQuantity": 1
+                },
+                {
+                    "color": "Black",
+                    "size": "XL",
+                    "stockQuantity": 1
+                }
+            ],
+            "productResources": [
+                {
+                    "name": "black-tshirt1.jpg",
+                    "url": "https://codedev.b-cdn.net/products/black-tshirt.jpeg",
+                    "type": "image",
+                    "isPrimary": true
+                },
+                {
+                    "name": "black-tshirt2.jpg",
+                    "url": "https://codedev.b-cdn.net/products/black-tshirt.jpeg",
+                    "type": "image",
+                    "isPrimary": false
+                }
+            ],
+            "newArrival": true
+        },
+        {
+            "id": "12345fd7-3b56-4961-bf9f-86b8a1ff7767",
+            "name": "Men's",
+            "code": "MEN",
+            "description": "Men's Clothing",
+            "categoryTypes": [
+                {
+                    "id": "7db40aab-bf59-4005-8d14-4ddd92371062",
+                    "name": "Jeans",
+                    "code": "JEANS",
+                    "description": "Men's jeans"
+                },
+                {
+                    "id": "eb0d5333-5535-47d7-ad71-8735edb5d531",
+                    "name": "Shirts",
+                    "code": "SHIRTS",
+                    "description": "Men's shirts"
+                },
+                {
+                    "id": "79735a80-3372-456f-808b-a67f11284438",
+                    "name": "Shorts",
+                    "code": "SHORTS",
+                    "description": "Men's shorts"
+                },
+                {
+                    "id": "0ca6f108-adc3-4b6e-831d-06dedf3904f5",
+                    "name": "T-shirts",
+                    "code": "TSHIRTS",
+                    "description": "Men's t-shirts"
+                },
+                {
+                    "id": "92b452eb-398d-4b1d-806b-9c7a27520c59",
+                    "name": "Hoodie's",
+                    "code": "HOODIE",
+                    "description": "Men's Hoodie"
+                }
+            ]
+        },
+        {
+            "id": "e2571e13-b506-4b49-9738-06955a5b62be",
+            "name": "Women's",
+            "code": "WOMEN",
+            "description": "Women's Clothing",
+            "categoryTypes": [
+                {
+                    "id": "fe4af52f-c041-4f02-9a4a-2b52933ec438",
+                    "name": "Dresses",
+                    "code": "DRESSES",
+                    "description": "Women's Dress"
+                },
+                {
+                    "id": "64ea5ed0-a251-47be-a641-681fa420fe11",
+                    "name": "Crop Top",
+                    "code": "CROPTOP",
+                    "description": "Women's CropTop"
+                },
+                {
+                    "id": "e112293a-bc45-48e5-a93b-ebd5c5b485f8",
+                    "name": "Shorts",
+                    "code": "SHORTS",
+                    "description": "Women's Shorts"
+                },
+                {
+                    "id": "08ac50de-0287-449f-9ba4-bfb68c60af1c",
+                    "name": "jeans",
+                    "code": "JEANS",
+                    "description": "Women's Jeans"
+                },
+                {
+                    "id": "1bf56488-16d2-41dc-8062-8d62bb044e13",
+                    "name": "T-shirts",
+                    "code": "TSHIRTS",
+                    "description": "Women's T-shirts"
+                },
+                {
+                    "id": "9768e2e9-b727-41e2-b834-1bd2015f0b5c",
+                    "name": "Hoodie/Sweatshirt",
+                    "code": "SWEATSHIRT",
+                    "description": "Women's Sweatshirt"
+                },
+                {
+                    "id": "93c27e9a-ecd6-41b7-a860-ebabd9d8fa97",
+                    "name": "Tops",
+                    "code": "TOPS",
+                    "description": "Women's Tops"
+                },
+                {
+                    "id": "d31e37c1-93ea-4cd6-858f-bf450dfcead6",
+                    "name": "Kurtis",
+                    "code": "KURTIS",
+                    "description": "Women's Kurtis"
+                }
+            ]
+        }
+    ]
+}

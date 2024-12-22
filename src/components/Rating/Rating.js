@@ -2,9 +2,9 @@ import React, { useMemo } from 'react'
 import SvgStarIcon from '../common/SvgStarIcon';
 import SvgEmptyStar from '../common/SvgEmptyStar';
 
-export const Rating = ({rating}) => {
-    const ratingNumber = useMemo(() => {
-        return Array(Math.floor(Number(rating))).fill()
+const Rating = ({rating}) => {
+    const ratingNumber = useMemo(()=>{
+      return Array(Math.floor(Number(rating))).fill()
     },[rating]);
 
   return (
@@ -21,3 +21,5 @@ export const Rating = ({rating}) => {
     </div>
   )
 }
+
+export default Rating
