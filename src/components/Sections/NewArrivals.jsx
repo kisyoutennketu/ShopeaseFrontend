@@ -6,7 +6,7 @@ import Shirts from '../../assets/img/shirts.jpg'
 import Tshirt from '../../assets/img/tshirts.jpeg'
 import dresses from '../../assets/img/dresses.jpg'
 import Carousel from 'react-multi-carousel'
-import { responsive } from '../utils/Section.constants'
+import { responsive } from '../../utils/Section.constants'
 import './NewArrivals.css'
 
 

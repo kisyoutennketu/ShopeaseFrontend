@@ -2,8 +2,13 @@ import React from 'react'
 import Navigation from '../components/Navigation/Navigation'
 import { Outlet } from 'react-router-dom'
 import BckgImage from '../assets/img/bg-1.png'
+import { useSelector } from 'react-redux'
+import Spinner from '../components/Spinner/Spinner'
 
 const AuthenticationWrapper = () => {
+
+  const isLoading = useSelector((state) => state?.commonState?.isLoading);
+
   return (
     <div>
         <Navigation variant="auth" />
@@ -14,6 +19,7 @@ const AuthenticationWrapper = () => {
           <div>
             <Outlet />
           </div>
+          { isLoading && <Spinner /> }
         </div>
     </div>
   )
