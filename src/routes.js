@@ -9,6 +9,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import OAuth2LoginCallback from "./pages/OAuth2LoginCallback";
 import Cart from "./pages/Cart/Cart";
+import Account from "./pages/Account/Account";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Checkout from "./pages/Checkout/Checkout";
 
 
 export const router = createBrowserRouter([
@@ -36,6 +39,14 @@ export const router = createBrowserRouter([
             {
                 path: "/cart-items",
                 element: <Cart />
+            },
+            {
+                path: '/account-details',
+                element: <ProtectedRoute ><Account /></ProtectedRoute>
+            },
+            {
+                path:'/checkout',
+                element: <ProtectedRoute><Checkout /></ProtectedRoute>
             }
         ]
     },

@@ -15,7 +15,10 @@ const cartSlice = createSlice({
             return state;
         },
         removeFromCart:(state, action) => {
-            return state?.cart?.filter((item) => item.id !== action?.payload)
+            return {
+                ...state,
+                cart : state?.cart?.filter((item) => (item.id !== action?.payload?.productId) && (item?.variant?.id !== action?.payload?.variantId))
+            }
         },
         updateQuantity:(state, action) => {
             return {
@@ -24,7 +27,8 @@ const cartSlice = createSlice({
                     if(item?.variant?.id === action?.payload?.variant_id){
                         return {
                             ...item,
-                            quantity:action?.payload?.quantity
+                            quantity:action?.payload?.quantity,
+                            subTotal: action?.payload?.quantity * item.price
                         }
                     }
                     return item;

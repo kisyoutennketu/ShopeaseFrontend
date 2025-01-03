@@ -99,6 +99,7 @@ export const ProductDetails = () => {
           name: product?.name,
           variant:selectedVariant,
           quantity: 1,
+          subTotal: product?.price,
           price: product?.price,
           
         }))
