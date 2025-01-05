@@ -1,17 +1,17 @@
 import {jwtDecode } from "jwt-decode";
 
 
-export const isTokenValid = () =>{
+export const isTokenValid = ()=>{
     const token = localStorage.getItem('authToken');
-    if(!token) return false;
+    if (!token) return false;
 
-    try{
+    try {
         const decoded = jwtDecode(token);
-        const currentTime = Date.now() / 1000; //Current time in seconds
+        const currentTime = Date.now() / 1000; // Current time in seconds
 
-        //Check if the token is expired
+        // Check if the token is expired
         return decoded.exp > currentTime;
-    }catch(error){
+    } catch (error) {
         console.error("Invalid token", error);
         return false;
     }

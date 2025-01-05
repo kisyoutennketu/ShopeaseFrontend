@@ -70,7 +70,7 @@ const Cart = () => {
         cartItems?.forEach(element => {
             value += element?.subTotal
         });
-        return value;
+        return value?.toFixed(2);
     },[cartItems]);
 
     const isLoggedIn = useMemo(() => {
