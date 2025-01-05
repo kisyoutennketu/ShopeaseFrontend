@@ -47,7 +47,8 @@ export default Shop
 // part4 https://www.youtube.com/watch?v=C-JTLiisKJ4&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=7&ab_channel=TheCodeReveal
 // part6 https://www.youtube.com/watch?v=MutS1GVvCnQ&t=5371s&ab_channel=TheCodeReveal
 // part 7 https://www.youtube.com/watch?v=ctcvf8sy2PI&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=4&ab_channel=TheCodeReveal
-//util 4:45:53 / 5:35:34
+// part8 https://www.youtube.com/watch?v=jan3L-PhQBM&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=3
+//util 59:11 / 1:10:22
 
 
 
