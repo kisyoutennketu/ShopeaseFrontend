@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
-    userInfo: {}
+    userInfo: {},
+    orders:[],
 }
 
 export const userSlice  = createSlice({
@@ -24,10 +25,26 @@ export const userSlice  = createSlice({
                     addressList:addresses
                 }
             }
+        },
+        removeAddress:(state, action)=>{
+            return {
+                ...state,
+                userInfo: {
+                    ...state?.userInfo,
+                    addressList: state?.userInfo?.addressList?.filter(address => address?.id !== action?.payload)
+                }
+            }
+        },
+        loadOrders: (state, action)=>{
+            return {
+                ...state,
+                orders:action.payload
+            }
         }
     }
 });
 
-export const { loadUserInfo, saveAddress } = userSlice?.actions;
+export const { loadUserInfo, saveAddress, removeAddress, loadOrders } = userSlice?.actions;
 export const selectUserInfo = (state) => state?.userState?.userInfo ?? {};
+export const selectAllOrders = (state) => state?.userState?.orders ?? [];
 export default userSlice.reducer;

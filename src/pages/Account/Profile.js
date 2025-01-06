@@ -1,12 +1,27 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { selectUserInfo } from '../../store/features/user'
+import React, { useCallback, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeAddress, selectUserInfo } from '../../store/features/user'
 import AddAddress from './AddAddress';
+import { setLoading } from '../../store/features/common';
+import { deleteAddressAPI } from '../../api/userInfo';
 
 const Profile = () => {
 
     const userInfo = useSelector(selectUserInfo);
     const [addAddress, setAddAddress] = useState(false);
+    const dispatch = useDispatch();
+
+
+    const onDeleteAddress = useCallback((id)=>{
+        dispatch(setLoading(true));
+        deleteAddressAPI(id).then(res=>{
+            dispatch(removeAddress(id));
+        }).catch(err=>{
+
+        }).finally(()=>{
+            dispatch(setLoading(false));
+        })
+    },[dispatch]);
 
 
     return (
@@ -43,7 +58,7 @@ const Profile = () => {
                                             <p>{address?.zipCode}</p>
                                             <div className='flex gap-2' >
                                                 <button className='underline text-blue-900' >Edit</button>
-                                                <button className='underline text-blue-900' >Remove</button>
+                                                <button onClick={()=> onDeleteAddress(address?.id)} className='underline text-blue-900' >Remove</button>
                                             </div>
                                         </div>
                                     )
