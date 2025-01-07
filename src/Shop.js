@@ -49,7 +49,7 @@ export default Shop
 // part 7 https://www.youtube.com/watch?v=ctcvf8sy2PI&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=4&ab_channel=TheCodeReveal
 // part8 https://www.youtube.com/watch?v=jan3L-PhQBM&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=3
 // part9 https://www.youtube.com/watch?v=NFpnxve3rDY&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=2
-//util 39:20/1:33:54
+//util 1:10:41/1:33:54 次はadmin Pane作成
 
 
 
