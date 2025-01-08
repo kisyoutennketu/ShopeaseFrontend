@@ -28,9 +28,9 @@ export const Shop = () => {
     <>
       
       <HeroSection />
-      <NewArrivals />
+      {/* <NewArrivals />
       {content?.pages?.shop?.sections && content?.pages?.shop?.sections?.map((item, index) => <Category key={item?.title + index} {...item} />)}
-      <Footer content={content.footer} />
+      <Footer content={content.footer} /> */}
     </>
   )
 }

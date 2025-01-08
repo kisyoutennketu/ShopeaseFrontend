@@ -41,7 +41,7 @@ const VerifyCode = ({email}) => {
     <div className='p-4'>
         {!message &&
         <>
-            <p className='text-lg text-blue-900'>Registration successful! Please check your email for the verificaiton code to complete your registration.</p>
+            <p className='text-lg text-blue-900'>Registration successful! Please check your email for the verification code to complete your registration.</p>
             <p className='text-lg text-gray-600 pt-4 fond-bold'>Please enter the 6-digit verification code sent to your email to verify your account.</p>
 
             <form onSubmit={onSubmit} className='flex flex-col gap-4'>

@@ -1,29 +1,25 @@
 import React from 'react'
 import SectionHeading from './SectionHeading/SectionHeading'
-import Card from '../Card/Card'
+import Card from '../Card/Card';
 import Jeans from '../../assets/img/jeans.jpg'
 import Shirts from '../../assets/img/shirts.jpg'
 import Tshirt from '../../assets/img/tshirts.jpeg'
 import dresses from '../../assets/img/dresses.jpg'
-import Carousel from 'react-multi-carousel'
-import { responsive } from '../../utils/Section.constants'
-import './NewArrivals.css'
-
+import Carousel from 'react-multi-carousel';
+import { responsive } from '../../utils/Section.constants';
+import './NewArrivals.css';
 
 const items = [{
     'title':'Jeans',
     imagePath:Jeans
-},
-{
+},{
     'title':'Shirts',
     imagePath:Shirts
-},
-{
-    'title':'Tshirt',
+},{
+    'title':'T-Shirts',
     imagePath:Tshirt
-},
-{
-    'title':'dresses',
+},{
+    'title':'Dresses',
     imagePath:dresses
 },
 {
@@ -33,13 +29,12 @@ const items = [{
 {
     'title':'Kurtis',
     imagePath:require('../../assets/img/kurtis.jpg')
-}]
+}];
 
-
-export const NewArrivals = () => {
+const NewArrivals = () => {
   return (
     <>
-    <SectionHeading title = {'New Arrivals'}/>
+    <SectionHeading title={'New Arrivals'}/>
     <Carousel
         responsive={responsive}
         autoPlay={false}
@@ -47,12 +42,13 @@ export const NewArrivals = () => {
         draggable={false}
         showDots={false}
         infinite={false}
-        partialVisbile={false}
+        partialVisible={false}
         itemClass={'react-slider-custom-item'}
         className='px-8'
-    >
-        {items && items?.map((item,index) => <Card key={item?.title + index} title={item.title} imagePath={item.imagePath}/>)}
-    </Carousel>
+      >
+        {items && items?.map((item,index)=> <Card key={item?.title +index} title={item.title} imagePath={item.imagePath}/>)}
+
+      </Carousel>
     </>
   )
 }
