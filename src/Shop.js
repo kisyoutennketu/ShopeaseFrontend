@@ -38,18 +38,7 @@ export const Shop = () => {
 export default Shop
 
 
-//reference 
-//github https://github.com/pardeep16/shopEase
-//youtube 
-// part1 https://www.youtube.com/watch?v=p8tBD3YTCPo&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=10&ab_channel=TheCodeReveal
-// part2 https://www.youtube.com/watch?v=LdEO5nPOaa0&ab_channel=TheCodeReveal
-// part3 https://www.youtube.com/watch?v=4nGZQbY8QTI&ab_channel=TheCodeReveal
-// part4 https://www.youtube.com/watch?v=C-JTLiisKJ4&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=7&ab_channel=TheCodeReveal
-// part6 https://www.youtube.com/watch?v=MutS1GVvCnQ&t=5371s&ab_channel=TheCodeReveal
-// part 7 https://www.youtube.com/watch?v=ctcvf8sy2PI&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=4&ab_channel=TheCodeReveal
-// part8 https://www.youtube.com/watch?v=jan3L-PhQBM&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=3
-// part9 https://www.youtube.com/watch?v=NFpnxve3rDY&list=PLVrmtM_SYuRb9IjCT-gCz9mHilcWRorus&index=2
-//util 1:10:41/1:33:54 次はadmin Pane作成
+
 
 
 
