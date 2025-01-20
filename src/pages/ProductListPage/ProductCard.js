@@ -7,7 +7,7 @@ export const ProductCard = ({id,title, description, price, discount, rating, bra
     <div className='flex flex-col hover:scale-105 relative'>
       <Link to={`/product/${slug}`} >
         <img className={`h-[320px] w-[280px]
-            border rounded-lg cursour-pointer object-cover block`} src={thumbnail} alt='Jeans' />
+            border rounded-lg cursor-pointer object-cover block`} src={thumbnail} alt='Jeans' />
       </Link>
             
             <div className='flex justify-between items-center'>

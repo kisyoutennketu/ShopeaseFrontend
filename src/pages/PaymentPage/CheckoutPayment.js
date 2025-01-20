@@ -44,7 +44,7 @@ const CheckoutForm = ({userId, addressId}) => {
 
                     confirmParams:{
                         payment_method: 'pm_card_visa',
-                        return_url: 'http://localhost:3000/confirmPayment'
+                        return_url: 'https://e-commerce-24-12-04-frontend-cz54.vercel.app/confirmPayment'
                     }
                 }).then(res=>{
                     console.log("Response: ", res);
