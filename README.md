@@ -3,7 +3,8 @@
 ショッピングサイトをyoutubeや記事、Github等を参考にしながら作成いたしました。  
 至らぬ点多々あるかと思われますが、見ていただけますと幸いです。 
 ## URL
-・Deployしたサイト:　https://e-commerce-24-12-04-frontend-cz54.vercel.app/  
+・Deployしたサイト:　https://e-commerce-24-12-04-frontend-cz54.vercel.app/   
+![Test Image 6](https://github.com/kisyoutennketu/ShopeaseFrontend/blob/main/src/assets/img/EC-site-image.jpg)  
 ※DBがvercelの無料枠のため、最初の読み込みに1分ほど掛かる場合がございます。申し訳ございません。  
   
 ・Backendのリポジトリ:　https://github.com/kisyoutennketu/ShopeaseBackend
