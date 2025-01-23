@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroImg from '../../assets/img/hero-img.png'
+import HeroImg from '../../assets/img/EC-site-image.jpg'
 import { NavLink } from 'react-router-dom'
 
 export const HeroSection = () => {
